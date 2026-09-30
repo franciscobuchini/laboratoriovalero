@@ -1093,9 +1093,7 @@ export default function App() {
         rel="noreferrer"
         aria-label="Consultar por WhatsApp"
       >
-        <div className="whatsapp-icon-wrap">
-          <IconifyIcon icon="logos:whatsapp-icon" className="icon" aria-hidden="true" />
-        </div>
+        <IconifyIcon icon="logos:whatsapp-icon" className="icon" aria-hidden="true" />
         <span>Consultar orden médica</span>
       </a>
 

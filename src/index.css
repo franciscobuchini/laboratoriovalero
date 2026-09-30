@@ -1642,21 +1642,10 @@ h2 {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
-.floating-whatsapp .whatsapp-icon-wrap {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #25d366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.floating-whatsapp .icon {
+  width: 1.75rem;
+  height: 1.75rem;
   flex: 0 0 auto;
-}
-
-.floating-whatsapp .whatsapp-icon-wrap .icon {
-  width: 1.3rem;
-  height: 1.3rem;
-  color: #ffffff;
 }
 
 /* =========================================================
