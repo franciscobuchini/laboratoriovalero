@@ -1542,6 +1542,10 @@ h2 {
   gap: 0.85rem;
 }
 
+.contact-actions .button {
+  white-space: nowrap;
+}
+
 .map-container {
   overflow: hidden;
   min-height: 420px;
@@ -1867,6 +1871,22 @@ h2 {
 
   .mobile-nav-drawer {
     padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .contact-info-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-actions .button {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.88rem;
+    white-space: nowrap;
   }
 }
 
