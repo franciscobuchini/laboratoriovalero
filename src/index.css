@@ -1075,10 +1075,19 @@ h2 {
   color: var(--color-text);
 }
 
+.btn-label-mobile {
+  display: none;
+}
+
+.btn-label-desktop {
+  display: inline;
+}
+
 /* =========================================================
    PREPARACIÓN DE PACIENTES
    ========================================================= */
 .prep-segmented-control {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -1088,7 +1097,16 @@ h2 {
   width: fit-content;
   max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  scroll-padding: 0.35rem;
   margin-bottom: 2.25rem;
+}
+
+.prep-segmented-control::-webkit-scrollbar {
+  display: none;
 }
 
 .segmented-btn {
@@ -1101,6 +1119,7 @@ h2 {
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -1816,6 +1835,15 @@ h2 {
   .coverage-toolbar,
   .coverage-status-row {
     display: none;
+  }
+
+  /* Responsive button labels */
+  .btn-label-desktop { display: none; }
+  .btn-label-mobile  { display: inline; }
+
+  /* Full width for horizontal scrollable pill selector */
+  .prep-segmented-control {
+    width: 100%;
   }
 
   .hero-trust-bar {

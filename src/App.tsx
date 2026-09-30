@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { Icon as IconifyIcon } from '@iconify/react'
 import {
   Clock,
@@ -213,6 +213,38 @@ export default function App() {
   const [coverageFilter, setCoverageFilter] = useState<'all' | 'popular' | 'obra-social' | 'prepaga'>('all')
   const [activePrepCategory, setActivePrepCategory] = useState<string>('todas')
   const [selectedArticle, setSelectedArticle] = useState<(typeof articlesData)[0] | null>(null)
+  const segmentedControlRef = useRef<HTMLDivElement>(null)
+
+  const handlePrepCategoryChange = (category: string, e: React.MouseEvent<HTMLButtonElement>) => {
+    setActivePrepCategory(category)
+    const container = segmentedControlRef.current
+    const target = e.currentTarget
+    if (container && target) {
+      const targetLeft = target.offsetLeft
+      const targetWidth = target.offsetWidth
+      const containerWidth = container.clientWidth
+      container.scrollTo({
+        left: targetLeft - containerWidth / 2 + targetWidth / 2,
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  useEffect(() => {
+    const container = segmentedControlRef.current
+    if (container) {
+      const activeBtn = container.querySelector<HTMLButtonElement>('.segmented-btn.active')
+      if (activeBtn) {
+        const targetLeft = activeBtn.offsetLeft
+        const targetWidth = activeBtn.offsetWidth
+        const containerWidth = container.clientWidth
+        container.scrollTo({
+          left: targetLeft - containerWidth / 2 + targetWidth / 2,
+          behavior: 'smooth',
+        })
+      }
+    }
+  }, [activePrepCategory])
 
   // Filtered Social Works
   const filteredSocialWorks = useMemo(() => {
@@ -650,7 +682,8 @@ export default function App() {
                   rel="noreferrer"
                 >
                   <IconifyIcon icon="logos:whatsapp-icon" className="icon" aria-hidden="true" />
-                  Consultar por WhatsApp
+                  <span className="btn-label-mobile">Consultanos</span>
+                  <span className="btn-label-desktop">Consultar por WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -669,52 +702,30 @@ export default function App() {
               </p>
             </div>
 
-            <div className="prep-segmented-control" role="tablist" aria-label="Tipos de análisis">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activePrepCategory === 'todas'}
-                className={`segmented-btn ${activePrepCategory === 'todas' ? 'active' : ''}`}
-                onClick={() => setActivePrepCategory('todas')}
-              >
-                Todas las guías
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activePrepCategory === 'rutina'}
-                className={`segmented-btn ${activePrepCategory === 'rutina' ? 'active' : ''}`}
-                onClick={() => setActivePrepCategory('rutina')}
-              >
-                Sangre de rutina
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activePrepCategory === 'lipidos'}
-                className={`segmented-btn ${activePrepCategory === 'lipidos' ? 'active' : ''}`}
-                onClick={() => setActivePrepCategory('lipidos')}
-              >
-                Perfil lipídico
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activePrepCategory === 'tiroides'}
-                className={`segmented-btn ${activePrepCategory === 'tiroides' ? 'active' : ''}`}
-                onClick={() => setActivePrepCategory('tiroides')}
-              >
-                Tiroides (TSH/T4)
-              </button>
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activePrepCategory === 'orina'}
-                className={`segmented-btn ${activePrepCategory === 'orina' ? 'active' : ''}`}
-                onClick={() => setActivePrepCategory('orina')}
-              >
-                Orina y urocultivo
-              </button>
+            <div
+              className="prep-segmented-control"
+              role="tablist"
+              aria-label="Tipos de análisis"
+              ref={segmentedControlRef}
+            >
+              {[
+                { id: 'todas', label: 'Todas las guías' },
+                { id: 'rutina', label: 'Sangre de rutina' },
+                { id: 'lipidos', label: 'Perfil lipídico' },
+                { id: 'tiroides', label: 'Tiroides (TSH/T4)' },
+                { id: 'orina', label: 'Orina y urocultivo' },
+              ].map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activePrepCategory === category.id}
+                  className={`segmented-btn ${activePrepCategory === category.id ? 'active' : ''}`}
+                  onClick={(e) => handlePrepCategoryChange(category.id, e)}
+                >
+                  {category.label}
+                </button>
+              ))}
             </div>
 
             <div className="prep-grid">
