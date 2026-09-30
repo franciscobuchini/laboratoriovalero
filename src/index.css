@@ -225,9 +225,9 @@ summary:focus-visible {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 0.6rem 1.5rem;
-  background: var(--color-surface-elevated);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
   border-bottom: 1px solid var(--color-border);
   transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
@@ -368,20 +368,32 @@ summary:focus-visible {
   }
 }
 
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 64px;
+  background: rgba(15, 23, 42, 0.28);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 45;
+  animation: fade-in 200ms ease;
+}
+
 .mobile-nav-drawer {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--color-surface-elevated);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(48px) saturate(220%);
+  -webkit-backdrop-filter: blur(48px) saturate(220%);
   border-bottom: 1px solid var(--color-border);
   padding: 1.25rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 50px -8px rgba(15, 23, 42, 0.18), 0 0 1px 1px rgba(255, 255, 255, 0.7) inset;
   animation: slide-down 200ms var(--ease-apple);
 }
 

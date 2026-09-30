@@ -337,7 +337,13 @@ export default function App() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
+          <>
+            <div
+              className="mobile-nav-backdrop"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
             <a href="#coberturas" onClick={() => setMobileMenuOpen(false)}>
               Coberturas y Obras Sociales
             </a>
@@ -364,7 +370,8 @@ export default function App() {
               Consultar por WhatsApp
             </a>
           </div>
-        )}
+        </>
+      )}
       </header>
 
       <main id="contenido" tabIndex={-1}>
