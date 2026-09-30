@@ -334,16 +334,17 @@ export default function App() {
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
+      </header>
 
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <>
-            <div
-              className="mobile-nav-backdrop"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-hidden="true"
-            />
-            <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
+      {/* Mobile Navigation Drawer & Backdrop */}
+      {mobileMenuOpen && (
+        <>
+          <div
+            className="mobile-nav-backdrop"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
             <a href="#coberturas" onClick={() => setMobileMenuOpen(false)}>
               Coberturas y Obras Sociales
             </a>
@@ -372,7 +373,6 @@ export default function App() {
           </div>
         </>
       )}
-      </header>
 
       <main id="contenido" tabIndex={-1}>
         {/* Apple Keynote Showcase Hero */}
