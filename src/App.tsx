@@ -295,6 +295,8 @@ export default function App() {
             type="button"
             className="mobile-menu-toggle"
             aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -303,7 +305,7 @@ export default function App() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="mobile-nav-drawer" role="menu">
+          <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
             <a href="#coberturas" onClick={() => setMobileMenuOpen(false)}>
               Coberturas y Obras Sociales
             </a>
@@ -319,12 +321,12 @@ export default function App() {
             <a href="#contacto" onClick={() => setMobileMenuOpen(false)}>
               Ubicación y Contacto
             </a>
+            <hr className="drawer-divider" />
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="button button-whatsapp"
-              style={{ marginTop: '0.5rem' }}
             >
               <IconifyIcon icon="logos:whatsapp-icon" className="icon" aria-hidden="true" />
               Consultar por WhatsApp
