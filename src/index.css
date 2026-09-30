@@ -1812,8 +1812,9 @@ h2 {
     display: none;
   }
 
-  /* Hide the interactive coverage search/filter/grid on mobile */
-  #coberturas {
+  /* On mobile: hide search, filters and status row — keep the logos grid */
+  .coverage-toolbar,
+  .coverage-status-row {
     display: none;
   }
 
