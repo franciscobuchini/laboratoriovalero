@@ -158,7 +158,6 @@ const articlesData = [
   {
     id: 1,
     tag: 'Bioquímica Clínica',
-    readTime: '3 min lectura',
     title: '¿Por qué es importante el ayuno antes de un análisis de sangre?',
     preview:
       'Cómo la ingesta de alimentos altera directamente glucemia, triglicéridos, lípidos y enzimas hepáticas.',
@@ -168,7 +167,6 @@ const articlesData = [
   {
     id: 2,
     tag: 'Prevención',
-    readTime: '4 min lectura',
     title: 'Chequeo anual preventivo: estudios de rutina esenciales',
     preview:
       'Un repaso completo por las determinaciones clave que permiten detectar a tiempo desequilibrios metabólicos.',
@@ -178,7 +176,6 @@ const articlesData = [
   {
     id: 3,
     tag: 'Endocrinología',
-    readTime: '3 min lectura',
     title: 'Control de tiroides: TSH, T4 libre y recomendaciones',
     preview:
       'Pautas claras para estudios tiroideos y cómo proceder si consumís levotiroxina diariamente.',
@@ -188,7 +185,6 @@ const articlesData = [
   {
     id: 4,
     tag: 'Guía práctica',
-    readTime: '2 min lectura',
     title: 'Cómo recolectar una muestra de orina sin errores',
     preview:
       'Pasos esenciales de higiene y técnica del chorro medio para evitar falsos positivos bacterianos.',
@@ -198,7 +194,6 @@ const articlesData = [
   {
     id: 5,
     tag: 'Servicios',
-    readTime: '2 min lectura',
     title: 'Extracción a domicilio: comodidad y precisión en tu hogar',
     preview:
       'Una alternativa segura para adultos mayores, personas en reposo o con movilidad reducida.',
@@ -946,8 +941,6 @@ export default function App() {
                   <div>
                     <div className="article-meta">
                       <span>{article.tag}</span>
-                      <span>·</span>
-                      <span>{article.readTime}</span>
                     </div>
                     <h3>{article.title}</h3>
                     <p>{article.preview}</p>
@@ -1135,8 +1128,6 @@ export default function App() {
 
             <div className="article-meta">
               <span>{selectedArticle.tag}</span>
-              <span>·</span>
-              <span>{selectedArticle.readTime}</span>
             </div>
 
             <h2 style={{ fontSize: '1.6rem', margin: 0, color: 'var(--color-ink)' }}>
