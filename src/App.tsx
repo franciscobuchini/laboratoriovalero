@@ -1162,7 +1162,8 @@ export default function App() {
                 rel="noreferrer"
               >
                 <IconifyIcon icon="logos:whatsapp-icon" className="icon" aria-hidden="true" />
-                Hacer una consulta sobre esto
+                <span className="btn-label-mobile">Consultanos</span>
+                <span className="btn-label-desktop">Hacer una consulta sobre esto</span>
               </a>
             </div>
           </div>
