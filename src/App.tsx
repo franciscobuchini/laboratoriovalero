@@ -376,8 +376,7 @@ export default function App() {
 
               <p className="hero-copy">
                 Laboratorio de análisis clínicos en Rosario. Orientación clara
-                para tus estudios, extracciones por orden de llegada, atención a domicilio y
-                resultados digitales rápidos y seguros.
+                para tus estudios. Atención a domicilio y resultados digitales rápidos y seguros.
               </p>
 
               <div className="hero-actions">
