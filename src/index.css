@@ -225,11 +225,20 @@ summary:focus-visible {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 0.6rem 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(32px) saturate(200%);
-  -webkit-backdrop-filter: blur(32px) saturate(200%);
-  border-bottom: 1px solid var(--color-border);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+@supports not (backdrop-filter: blur(20px)) {
+  .site-header {
+    background: rgba(255, 255, 255, 0.94);
+  }
 }
 
 .brand {
