@@ -14,7 +14,6 @@ import {
   Check,
   ArrowRight,
   Sparkles,
-  Activity,
   Droplets,
   Pill,
   FlaskConical,
@@ -67,27 +66,14 @@ const prepGuides = [
   {
     id: 'sangre',
     category: 'rutina',
-    title: 'Sangre de rutina',
-    badge: '8 horas de ayuno',
+    title: 'Control de sangre de rutina',
+    badge: '8 a 12 horas de ayuno',
     icon: Droplets,
-    summary: 'Concurrir con 8 horas de ayuno estricto. Agua solamente si lo necesitás.',
+    summary: 'Concurrir con 8 a 12 horas de ayuno según corresponda.',
     details: [
       'No consumir chicles, caramelos, café, té ni mate durante el período de ayuno.',
       'Evitar comidas copiosas o con alto contenido de grasas la noche anterior.',
       'Bebés y lactantes: ayuno mínimo estipulado de 3 horas.',
-      'Podés beber unos sorbos de agua sola en caso de sed o calor.',
-    ],
-  },
-  {
-    id: 'lipidos',
-    category: 'lipidos',
-    title: 'Triglicéridos o perfil lipídico',
-    badge: '12 horas de ayuno',
-    icon: Activity,
-    summary: 'Requiere 12 horas de ayuno y una cena liviana libre de grasas.',
-    details: [
-      'No ingerir bebidas alcohólicas durante las 24 horas previas al estudio.',
-      'Cenaliviana la noche anterior (sin frituras, embutidos ni lácteos enteros).',
       'Mantener las pautas generales de hidratación sólo con agua.',
     ],
   },
@@ -95,12 +81,12 @@ const prepGuides = [
     id: 'tiroides',
     category: 'tiroides',
     title: 'Medicación tiroidea (TSH / T4)',
-    badge: 'Dosis post-extracción',
+    badge: 'Dosis pre-extracción',
     icon: Pill,
-    summary: 'Si tomás levotiroxina, no la tomes antes de la extracción de sangre.',
+    summary:
+      'Si tomás levotiroxina, pospone la toma hasta después de la extracción, salvo indicación en contrario por parte de tu médico.',
     details: [
       'Concurrí en ayunas al laboratorio para la toma de muestra.',
-      'Llevá tu medicación para tomarla inmediatamente posterior a la extracción.',
       'Para otras medicaciones habituales, seguí la indicación de tu profesional médico.',
     ],
   },
@@ -113,10 +99,10 @@ const prepGuides = [
     summary: 'Usar frasco limpio o estéril según corresponda y descartar el primer chorro.',
     details: [
       'Idealmente recolectar la primera orina de la mañana.',
-      'Si no es posible, asegurar una retención vesical mínima de 3 horas.',
-      'Para urocultivo: higiene genital previa con agua y jabón neutro, secar con toalla limpia.',
-      'Descartar el primer chorro en el inodoro y recolectar la porción media en el frasco.',
-      'Podés retirar frascos estériles sin cargo previamente en nuestro laboratorio.',
+      'Si no es posible, asegurar una retención mínima de 3 horas.',
+      'Para urocultivo: higiene genital previa con agua y jabón nuevo, sin secar.',
+      'Descartar el primer chorro en el inodoro y recolectar el chorro medio en el frasco.',
+      'Podés adquirir frascos estériles previamente en nuestro laboratorio.',
     ],
   },
 ]
@@ -125,17 +111,17 @@ const faqs = [
   {
     question: '¿Cuál es el horario de atención y de extracciones?',
     answer:
-      'Atendemos de lunes a viernes de 7:30 a 12:00 y de 17:00 a 19:00. Las extracciones en el laboratorio se realizan de 7:30 a 10:00.',
+      'Atendemos de lunes a viernes de 7:30 a 12:00 y de lunes a jueves de 16:00 a 19:00 (viernes por la tarde cerrado). Las extracciones en el laboratorio se realizan de 7:30 a 10:00.',
   },
   {
     question: '¿Necesito sacar turno para atenderme en el laboratorio?',
     answer:
-      'La atención presencial para extracciones en el laboratorio es por estricto orden de llegada de 7:30 a 10:00. Para extracciones a domicilio sí es necesario coordinar turno previamente por WhatsApp.',
+      'La atención presencial para extracciones en el laboratorio es por orden de llegada de 7:30 a 10:00. Para extracciones a domicilio sí es necesario coordinar turno previamente por WhatsApp.',
   },
   {
     question: '¿Qué documentación debo presentar al concurrir?',
     answer:
-      'Credencial o carnet digital de obra social o prepaga, DNI original y orden médica con datos del paciente, diagnóstico, firma, sello y fecha vigente del profesional solicitante.',
+      'Credencial o carnet digital de obra social o prepaga, DNI y orden médica con datos del paciente, diagnóstico, fecha vigente, firma y sello del profesional solicitante.',
   },
   {
     question: '¿Cómo sé si mi orden requiere autorización previa de mi obra social?',
@@ -150,7 +136,7 @@ const faqs = [
   {
     question: '¿Puedo retirar recipientes estériles para orina en el laboratorio?',
     answer:
-      'Sí, podés pasar sin turno durante todo nuestro horario de atención (mañana o tarde) a retirar los frascos estériles necesarios sin ningún costo.',
+      'Sí, podés pasar sin turno durante nuestro horario de atención a adquirir los frascos estériles necesarios.',
   },
 ]
 
@@ -189,7 +175,7 @@ const articlesData = [
     preview:
       'Pasos esenciales de higiene y técnica del chorro medio para evitar falsos positivos bacterianos.',
     content:
-      'La muestra ideal es la primera orina de la mañana o tras una retención mínima de 3 horas. Para evitar contaminaciones externas, realizá un lavado genital previo con agua y jabón neutro. Al orinar, dejá caer el primer chorro en el inodoro y recolectá la porción media en el recipiente estéril. Cerrá bien la tapa y llevalo al laboratorio dentro de las 2 horas de recolectado.',
+      'La muestra ideal es la primera orina de la mañana o tras una retención mínima de 3 horas. Para evitar contaminaciones externas, realizá un lavado genital previo con agua y jabón nuevo, sin secar. Al orinar, dejá caer el primer chorro en el inodoro y recolectá el chorro medio en el recipiente estéril. Cerrá bien la tapa y llevalo al laboratorio dentro de las 2 horas de recolectado.',
   },
   {
     id: 5,
@@ -274,7 +260,7 @@ export default function App() {
               <MapPin className="icon" /> Iriondo 2065, Rosario
             </span>
             <span className="top-bar-item">
-              <Clock className="icon" /> Lun a Vie 7:30 - 12:00 y 17:00 - 19:00
+              <Clock className="icon" /> Lun a Vie 7:30 - 12:00 · Lun a Jue 16:00 - 19:00 (Vie tarde cerrado)
             </span>
             <span className="top-bar-item">
               <Phone className="icon" /> +54 9 3416 82-4801
@@ -299,6 +285,7 @@ export default function App() {
         </a>
 
         <nav className="main-nav" aria-label="Navegación principal">
+          <a href="#historia">Inicios</a>
           <a href="#coberturas">Coberturas</a>
           <a href="#preparacion">Preparación</a>
           <a href="#domicilio">A Domicilio</a>
@@ -340,6 +327,9 @@ export default function App() {
             aria-hidden="true"
           />
           <div id="mobile-nav-drawer" className="mobile-nav-drawer" role="menu">
+            <a href="#historia" onClick={() => setMobileMenuOpen(false)}>
+              Inicios y Trayectoria
+            </a>
             <a href="#coberturas" onClick={() => setMobileMenuOpen(false)}>
               Coberturas y Obras Sociales
             </a>
@@ -385,7 +375,7 @@ export default function App() {
               </h1>
 
               <p className="hero-copy">
-                Laboratorio de análisis clínicos y bioquímicos en Rosario. Orientación clara
+                Laboratorio de análisis clínicos en Rosario. Orientación clara
                 para tus estudios, extracciones por orden de llegada, atención a domicilio y
                 resultados digitales rápidos y seguros.
               </p>
@@ -414,7 +404,7 @@ export default function App() {
                 </div>
                 <div className="hero-trust-item">
                   <Clock className="icon" />
-                  <span>Lun a Vie 7:30 - 12:00 y 17:00 - 19:00</span>
+                  <span>Lun a Vie 7:30 - 12:00 · Lun a Jue 16:00 - 19:00 (Vie tarde cerrado)</span>
                 </div>
                 <div className="hero-trust-item">
                   <ShieldCheck className="icon" />
@@ -441,7 +431,7 @@ export default function App() {
                   <span className="hub-time-label">Horario de extracciones en laboratorio</span>
                   <span className="hub-time-value">7:30 a 10:00 hs</span>
                   <p className="hub-time-sub">
-                    Lunes a viernes por estricto orden de llegada. Atención ágil y personalizada.
+                    Lunes a viernes por orden de llegada. Atención ágil y personalizada.
                   </p>
                 </div>
               </div>
@@ -495,7 +485,7 @@ export default function App() {
             </div>
             <div className="quick-card-text">
               <h3>Extracción a domicilio</h3>
-              <p>De lunes a viernes de 8:00 a 10:00 hs con turno previamente coordinado.</p>
+              <p>De lunes a viernes con turno previamente coordinado.</p>
             </div>
           </div>
 
@@ -515,32 +505,40 @@ export default function App() {
           <div className="section-inner">
             <div className="story-card">
               <div className="section-heading" style={{ marginBottom: 0 }}>
-                <p className="eyebrow">Compromiso y Trayectoria</p>
-                <h2>Calidez humana y rigor profesional para tu salud</h2>
-                <p className="story-lead">
-                  Combinamos experiencia, equipamiento de vanguardia y una atención personalizada
-                  que prioriza el tiempo y la tranquilidad de cada paciente.
+                <p className="eyebrow">Inicios y Trayectoria · Desde 1957</p>
+                <h2>Más de seis décadas de vocación y cercanía en Rosario</h2>
+              </div>
+
+              <div className="story-narrative">
+                <p>
+                  Laboratorio Valero fue fundado en 1957 por el bioquímico y farmacéutico Daniel
+                  Valero, quien decidió dedicar su vocación a la bioquímica clínica y abrir las
+                  puertas de su propio laboratorio en la ciudad de Rosario. Posteriormente, su hija,
+                  la bioquímica María Graciela Valero, se incorporó al laboratorio junto con el
+                  bioquímico Alfredo Juan Carlomagno, conformando el equipo profesional que hoy
+                  lleva adelante el establecimiento.
+                </p>
+                <p>
+                  Al ser una estructura familiar, el laboratorio se destaca por brindar una atención
+                  cercana, humana y personalizada a cada paciente. Asimismo, el equipo mantiene una
+                  capacitación continua a través de cursos de perfeccionamiento profesional y la
+                  incorporación de equipamiento moderno para la labor diaria.
+                </p>
+                <p className="story-highlight">
+                  De esta manera, Laboratorio Valero combina más de seis décadas de trayectoria,
+                  atención cercana y un compromiso constante con la calidad y la precisión
+                  diagnóstica al servicio de la salud de nuestra comunidad.
                 </p>
               </div>
 
               <div className="story-pillars">
                 <div className="pillar-item">
                   <div className="pillar-icon">
-                    <CheckCircle2 className="icon" />
+                    <Clock className="icon" />
                   </div>
                   <div className="pillar-content">
-                    <h3>Rigor analítico</h3>
-                    <p>Procesos estandarizados y controles de calidad en cada determinación.</p>
-                  </div>
-                </div>
-
-                <div className="pillar-item">
-                  <div className="pillar-icon">
-                    <ShieldCheck className="icon" />
-                  </div>
-                  <div className="pillar-content">
-                    <h3>Atención sin demoras</h3>
-                    <p>Extracciones eficientes para que puedas continuar tu jornada sin esperas.</p>
+                    <h3>Fundado en 1957</h3>
+                    <p>Más de seis décadas de trayectoria ininterrumpida en Rosario.</p>
                   </div>
                 </div>
 
@@ -549,8 +547,18 @@ export default function App() {
                     <Sparkles className="icon" />
                   </div>
                   <div className="pillar-content">
-                    <h3>Canales directos</h3>
-                    <p>Comunicación fluida por WhatsApp con nuestro equipo bioquímico.</p>
+                    <h3>Atención cercana y humana</h3>
+                    <p>Estructura familiar y trato personalizado a cada paciente.</p>
+                  </div>
+                </div>
+
+                <div className="pillar-item">
+                  <div className="pillar-icon">
+                    <CheckCircle2 className="icon" />
+                  </div>
+                  <div className="pillar-content">
+                    <h3>Calidad y precisión</h3>
+                    <p>Capacitación continua e incorporación de equipamiento moderno.</p>
                   </div>
                 </div>
               </div>
@@ -713,7 +721,6 @@ export default function App() {
               {[
                 { id: 'todas', label: 'Todas las guías' },
                 { id: 'rutina', label: 'Sangre de rutina' },
-                { id: 'lipidos', label: 'Perfil lipídico' },
                 { id: 'tiroides', label: 'Tiroides (TSH/T4)' },
                 { id: 'orina', label: 'Orina y urocultivo' },
               ].map((category) => (
@@ -772,14 +779,14 @@ export default function App() {
               </p>
             </div>
 
-            <div className="domicilio-layout">
+            <div className="domicilio-steps-layout">
               <div className="service-steps">
                 <div className="step-card">
                   <span className="step-number">1</span>
                   <div className="step-body">
                     <h3>Enviá tu orden médica</h3>
                     <p>
-                      Mandanos una foto de la orden junto con tu dirección en Rosario por WhatsApp.
+                      Mandanos una foto de la orden junto con tu dirección por WhatsApp.
                     </p>
                   </div>
                 </div>
@@ -789,8 +796,7 @@ export default function App() {
                   <div className="step-body">
                     <h3>Recibí indicaciones y cotización</h3>
                     <p>
-                      Te informamos el ayuno necesario, condiciones de muestra y el arancel según
-                      tu zona.
+                      Te informamos el ayuno necesario, condiciones de muestra y el arancel.
                     </p>
                   </div>
                 </div>
@@ -800,44 +806,15 @@ export default function App() {
                   <div className="step-body">
                     <h3>Visita en tu hogar</h3>
                     <p>
-                      Nuestro profesional bioquímico acude en el día y horario convenido de 8:00 a
-                      10:00 hs.
+                      Nuestro profesional bioquímico acude en el día y horario convenido.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="domicilio-benefits">
-                <h3>Ventajas del servicio domiciliario</h3>
-                <div className="benefits-list">
-                  <div className="benefit-item">
-                    <CheckCircle2 className="icon" />
-                    <div>
-                      <strong>Comodidad total</strong>
-                      <span>Evitás traslados matutinos y demoras en salas de espera.</span>
-                    </div>
-                  </div>
-
-                  <div className="benefit-item">
-                    <CheckCircle2 className="icon" />
-                    <div>
-                      <strong>Bioseguridad y materiales estériles</strong>
-                      <span>Mismos estándares de excelencia que en nuestro laboratorio.</span>
-                    </div>
-                  </div>
-
-                  <div className="benefit-item">
-                    <CheckCircle2 className="icon" />
-                    <div>
-                      <strong>Atención para todas las edades</strong>
-                      <span>Adultos mayores, personas en posoperatorio o niños pequeños.</span>
-                    </div>
-                  </div>
-                </div>
-
+              <div className="domicilio-cta-wrapper">
                 <a
                   className="button button-whatsapp"
-                  style={{ width: '100%' }}
                   href={whatsappDomicilioUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -870,7 +847,7 @@ export default function App() {
                   <h3>Entrega digital en PDF</h3>
                   <p>
                     Recibí tus informes firmados digitalmente de forma directa en tu WhatsApp o
-                    correo electrónico para reenviárselos al instante a tu médico tratante.
+                    correo electrónico para reenviárselos al instante a tu médico.
                   </p>
                 </div>
               </div>
@@ -882,9 +859,9 @@ export default function App() {
                 <div className="result-card-content">
                   <h3>Retiro presencial impreso</h3>
                   <p>
-                    Si necesitás el informe en soporte papel, podés retirarlo en recepción durante
-                    todo nuestro horario de atención habitual (mañana de 7:30 a 12:00 o tarde de
-                    17:00 a 19:00).
+                    Si necesitás el informe en papel, podés retirarlo en recepción durante
+                    nuestro horario de atención habitual (lunes a viernes de 7:30 a 12:00 y lunes a
+                    jueves de 16:00 a 19:00).
                   </p>
                 </div>
               </div>
@@ -1002,7 +979,7 @@ export default function App() {
                       </div>
                       <div className="contact-row-content">
                         <strong>Horario de atención general</strong>
-                        <span>Lunes a viernes de 7:30 a 12:00 y de 17:00 a 19:00 hs</span>
+                        <span>Lunes a viernes 7:30 a 12:00 · Lunes a jueves 16:00 a 19:00 hs (viernes tarde cerrado)</span>
                       </div>
                     </div>
 

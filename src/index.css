@@ -862,13 +862,31 @@ h2 {
   gap: 2.5rem;
 }
 
-.story-lead {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: var(--color-ink);
-  font-weight: 500;
-  max-width: 800px;
+.story-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 860px;
+}
+
+.story-narrative p {
   margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.story-narrative .story-highlight {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--color-primary);
+  line-height: 1.65;
+  margin-top: 0.5rem;
+  background: var(--color-primary-soft);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .story-pillars {
@@ -1239,28 +1257,36 @@ h2 {
 /* =========================================================
    EXTRACCIÓN A DOMICILIO
    ========================================================= */
-.domicilio-layout {
-  display: grid;
-  gap: 3rem;
-  align-items: center;
+.domicilio-steps-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .service-steps {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .step-card {
   position: relative;
-  padding: 1.75rem;
+  padding: 2rem;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-hover);
 }
 
 .step-number {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-pill);
   background: var(--color-primary-gradient);
   color: #ffffff;
@@ -1274,61 +1300,22 @@ h2 {
 }
 
 .step-body h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.18rem;
   font-weight: 700;
   color: var(--color-ink);
 }
 
 .step-body p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--color-muted);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-.domicilio-benefits {
-  padding: 2.25rem;
-}
-
-.domicilio-benefits h3 {
-  margin: 0 0 1.25rem;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--color-ink);
-}
-
-.benefits-list {
+.domicilio-cta-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-
-.benefit-item .icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--color-primary);
-  margin-top: 0.15rem;
-}
-
-.benefit-item div strong {
-  display: block;
-  font-size: 0.98rem;
-  color: var(--color-ink);
-  margin-bottom: 0.15rem;
-}
-
-.benefit-item div span {
-  font-size: 0.88rem;
-  color: var(--color-muted);
-  line-height: 1.4;
+  justify-content: center;
 }
 
 /* =========================================================
@@ -1822,11 +1809,11 @@ h2 {
   }
 
   .prep-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
-  .domicilio-layout {
-    grid-template-columns: 1.1fr 0.9fr;
+  .service-steps {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .results-grid {
@@ -1850,6 +1837,14 @@ h2 {
 
   .hero-inner {
     grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .prep-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .prep-grid:has(> :only-child) {
+    grid-template-columns: minmax(320px, 580px);
   }
 
   .section {
