@@ -111,7 +111,7 @@ const faqs = [
   {
     question: '¿Cuál es el horario de atención y de extracciones?',
     answer:
-      'Atendemos de lunes a viernes de 7:30 a 12:00 y de lunes a jueves de 16:00 a 19:00 (viernes por la tarde cerrado). Las extracciones en el laboratorio se realizan de 7:30 a 10:00.',
+      'Atendemos de lunes a jueves de 7:30 a 12:00 y de 16:00 a 19:00, y los viernes de 7:30 a 12:00. Las extracciones en el laboratorio se realizan de 7:30 a 10:00.',
   },
   {
     question: '¿Necesito sacar turno para atenderme en el laboratorio?',
@@ -260,7 +260,7 @@ export default function App() {
               <MapPin className="icon" /> Iriondo 2065, Rosario
             </span>
             <span className="top-bar-item">
-              <Clock className="icon" /> Lun a Vie 7:30 - 12:00 · Lun a Jue 16:00 - 19:00 (Vie tarde cerrado)
+              <Clock className="icon" /> Lun a Jue 7:30 - 12:00 y 16:00 - 19:00, Vie 7:30 - 12:00
             </span>
             <span className="top-bar-item">
               <Phone className="icon" /> +54 9 3416 82-4801
@@ -404,7 +404,7 @@ export default function App() {
                 </div>
                 <div className="hero-trust-item">
                   <Clock className="icon" />
-                  <span>Lun a Vie 7:30 - 12:00 · Lun a Jue 16:00 - 19:00 (Vie tarde cerrado)</span>
+                  <span>Lun a Jue 7:30 - 12:00 y 16:00 - 19:00, Vie 7:30 - 12:00</span>
                 </div>
                 <div className="hero-trust-item">
                   <ShieldCheck className="icon" />
@@ -860,8 +860,8 @@ export default function App() {
                   <h3>Retiro presencial impreso</h3>
                   <p>
                     Si necesitás el informe en papel, podés retirarlo en recepción durante
-                    nuestro horario de atención habitual (lunes a viernes de 7:30 a 12:00 y lunes a
-                    jueves de 16:00 a 19:00).
+                    nuestro horario de atención habitual (lunes a jueves de 7:30 a 12:00 y de 16:00
+                    a 19:00, y los viernes de 7:30 a 12:00).
                   </p>
                 </div>
               </div>
@@ -979,7 +979,7 @@ export default function App() {
                       </div>
                       <div className="contact-row-content">
                         <strong>Horario de atención general</strong>
-                        <span>Lunes a viernes 7:30 a 12:00 · Lunes a jueves 16:00 a 19:00 hs (viernes tarde cerrado)</span>
+                        <span>Lunes a jueves de 7:30 a 12:00 y de 16:00 a 19:00, viernes de 7:30 a 12:00</span>
                       </div>
                     </div>
 
